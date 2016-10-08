@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/server/app.js --ignore src/app/ --exec babel-node --inspect",
+    "start": "nodemon src/server/app.js --ignore src/app/ --ignore webpack-assets.json --exec babel-node --inspect",
     "dev": "babel-node src/server/app.js"
   },
   "author": "Arun Premkumar",
@@ -29,6 +29,7 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "assets-webpack-plugin": "^3.4.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "jade": "^1.11.0",
