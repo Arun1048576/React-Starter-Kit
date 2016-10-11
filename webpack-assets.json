@@ -3,9 +3,9 @@
     "js": "/vendor.js"
   },
   "Tagger": {
-    "js": "/Tagger_052b3961cdc5c8b419fd.js"
+    "js": "/Tagger.js"
   },
   "app": {
-    "js": "/app_052b3961cdc5c8b419fd.js"
+    "js": "/app.js"
   }
 }
