@@ -7,7 +7,7 @@
     "node" : "6.4.0"
   },
   "scripts": {
-    "start": "nodemon src/server/app.js --ignore src/app/ --ignore webpack-assets.json --exec babel-node --inspect",
+    "start": "node src/server/app.js --ignore src/app/ --ignore webpack-assets.json --exec babel-node --inspect",
     "dev": "babel-node src/server/app.js"
   },
   "author": "Arun Premkumar",
