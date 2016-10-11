@@ -6,8 +6,15 @@
         background-color : #8c1a3b;
       }
     </style>
+
     <script src="vendor.js" defer></script>
     <script src="app.js" defer></script>
+
+    <script type="text/javascript">
+      <% if (typeof(state) !== 'undefined') { %>
+        window._state = <%- state %>;
+      <% } %>
+    </script>
   </head>
   <body>
     <div id="main-content"><%-content%></div>

@@ -11,7 +11,7 @@ import webpackConfig from '../../webpack.config';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
-import routes from '../app/routes';
+import routes, {store} from '../app/routes';
 
 const app = express();
 
@@ -34,8 +34,9 @@ app.use((req, res, next) => {
   }, (error, redirectLocation, renderProps) => {
     if(renderProps) {
       const content = renderToString(<RouterContext {...renderProps}/>)
+      const state   = JSON.stringify(store.getState());
       next()
-      res.render('index', {content})
+      res.render('index', {content, state})
       res.end()
     }
   })
