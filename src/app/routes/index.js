@@ -1,7 +1,6 @@
 import React              from 'react'
 import {Route}            from 'react-router'
 import {createStore}      from 'redux'
-import {Provider}         from 'react-redux'
 
 import {reducerCreator}   from '../helpers/reducer'
 import globalReducers     from '../reducers/globalReducers'

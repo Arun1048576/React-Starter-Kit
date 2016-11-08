@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node" : "6.4.0"
+    "node": "6.4.0"
   },
   "scripts": {
-    "start": "node src/server/app.js --ignore src/app/ --ignore webpack-assets.json --exec babel-node --inspect",
+    "start": "nodemon src/server/app.js --ignore src/app/ --ignore webpack-assets.json --exec babel-node --inspect",
     "dev": "babel-node src/server/app.js"
   },
   "author": "Arun Premkumar",
@@ -25,9 +25,11 @@
     "eslint-loader": "^1.5.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-libs-browser": "^1.0.0",
+    "node-sass": "^3.10.1",
     "nodemon": "^1.11.0",
     "react-css-modules": "^3.7.10",
     "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^4.0.2",
     "strip-loader": "^0.1.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"

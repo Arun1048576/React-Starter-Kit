@@ -1,8 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import {Router, Link, browserHistory} from 'react-router';
-import routes from '../app/routes';
+import {Router, Link, browserHistory} from 'react-router'
+import {Provider} from 'react-redux'
+
+import routes, {store} from '../app/routes'
 
 window.onload = () =>{
   startReactRouter()
@@ -10,7 +12,9 @@ window.onload = () =>{
 
 function startReactRouter() {
   ReactDOM.render(
-    <Router history={browserHistory} routes={routes}/>
+    <Provider store={store}>
+      <Router history={browserHistory} routes={routes}/>
+    </Provider>
     , document.getElementById('main-content')
   )  
 }

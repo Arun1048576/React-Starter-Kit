@@ -1,7 +1,7 @@
 export default {
   INITIALIZE_APP : (state, payload) => {
     const newState = Object.assign({}, state, {
-      appStarted : true
+      appStarted : "app working"
     })
     return newState;
   }
