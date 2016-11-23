@@ -35,6 +35,10 @@ app.use((req, res, next) => {
     location : req.url
   }, (error, redirectLocation, renderProps) => {
     if(renderProps) {
+      store.dispatch({
+        type : 'INITIALIZE_APP'
+      })
+
       const content = renderToString(
         <Provider store={store}>
           <RouterContext {...renderProps}/>

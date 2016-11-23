@@ -4,7 +4,7 @@ var AssetsPlugin          = require('assets-webpack-plugin');
 
 
 module.exports = {
-  devtool   : 'eval-source-map',
+  devtool   : 'source-map',
   entry     : {
     app             : path.join(__dirname, 'src/client/app.js'),
     vendor          : ["react", "react-dom", "react-router", "webpack-hot-middleware/client"]

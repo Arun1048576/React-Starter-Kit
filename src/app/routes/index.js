@@ -1,3 +1,4 @@
+import _                  from 'underscore'
 import React              from 'react'
 import {Route}            from 'react-router'
 import {createStore}      from 'redux'
@@ -5,9 +6,9 @@ import {createStore}      from 'redux'
 import {reducerCreator}   from '../helpers/reducer'
 import globalReducers     from '../reducers/globalReducers'
 
+// Configuring Store
 const reducerEnhancer     = (typeof window != 'undefined' && window.devToolsExtension)? window.devToolsExtension() : (f => f)
 const initalState         = (typeof window != 'undefined' && window._state) ? window._state : {}
-
 const initialReducer      = reducerCreator({}, globalReducers)
 const store               = createStore(initialReducer, initalState, reducerEnhancer)
 
@@ -16,18 +17,29 @@ export {store};
 if (typeof require.ensure !== 'function') require.ensure = (d, c) => c(require)
 
 const startComponent = (Component, callback) => {
-  store.dispatch({
-    type : 'INITIALIZE_APP'
-  })
-  const Element   = Component.default
-  const Reducer   = Component.reducer
-  const Action    = Component.action
+  const state     = store.getState()
+  const Reducer   = Component.Reducer
+  if(Reducer) {
+    const newReducer = reducerCreator(state, _.extend({}, globalReducers, Reducer));
+    store.replaceReducer(newReducer)
+    store.dispatch({
+      type : 'INITIALIZE_ROUTE'
+    })
+  }
 
-  // TODO : Replace the previous Component Reducer with this Reducer
-  // TODO : Call Reducer.INITALIZE_ROUTE to get Ready for the component
-  // TODO : Action.initAction if present then resolve it and then call the following callback
+  const renderComponent = () => {
+    const Element   = Component.default
+    callback(null, Element)
+  }
 
-  callback(null, Element)
+  const Action    = Component.Action
+  if(Action) {
+    Action(store.dispatch, state).then(()=> {
+      renderComponent()
+    })
+  } else {
+    renderComponent()
+  }
 }
 
 export default (

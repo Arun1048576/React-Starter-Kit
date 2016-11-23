@@ -1,13 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-
+import React                          from 'react'
+import ReactDOM                       from 'react-dom'
 import {Router, Link, browserHistory} from 'react-router'
-import {Provider} from 'react-redux'
+import {Provider}                     from 'react-redux'
 
-import routes, {store} from '../app/routes'
+import routes, {store}                from '../app/routes'
 
 window.onload = () =>{
   startReactRouter()
+  store.dispatch({
+    type : 'INITIALIZE_APP'
+  })
 }
 
 function startReactRouter() {
