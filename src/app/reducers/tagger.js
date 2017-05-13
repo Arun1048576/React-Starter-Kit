@@ -1,7 +1,7 @@
 export default {
   INITIALIZE_ROUTE : (state, payload) => {
     const newState = Object.assign({}, state, {
-      currentPage : "tagger"
+      currentPage : "login"
     })
     return newState;
   }

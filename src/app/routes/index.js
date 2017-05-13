@@ -26,7 +26,6 @@ const startComponent = (Component, callback) => {
       type : 'INITIALIZE_ROUTE'
     })
   }
-
   const renderComponent = () => {
     const Element   = Component.default
     callback(null, Element)
@@ -43,11 +42,19 @@ const startComponent = (Component, callback) => {
 }
 
 export default (
-  <Route  path="/" 
-          getComponent={(nextState, callback)=> {
-            require.ensure([], (require)=> {
-            startComponent(require('../components/Tagger/index'), callback)
-          }, 'Tagger')
-    }}
-  />
+  <Route>
+    <Route  path="/" 
+            getComponent={(nextState, callback)=> {
+              require.ensure([], (require)=> {
+              startComponent(require('../components/Tagger/index'), callback)
+            }, 'Tagger')
+      }}/>
+    <Route  path="/bid-list" 
+            getComponent={(nextState, callback)=> {
+              require.ensure([], (require)=> {
+              startComponent(require('../components/BidList/index'), callback)
+            }, 'BidList')
+      }}/>
+  </Route>
+
 )

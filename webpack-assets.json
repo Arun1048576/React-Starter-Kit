@@ -2,6 +2,9 @@
   "vendor": {
     "js": "/vendor.js"
   },
+  "BidList": {
+    "js": "/BidList.js"
+  },
   "Tagger": {
     "js": "/Tagger.js"
   },

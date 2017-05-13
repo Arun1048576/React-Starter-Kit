@@ -3,6 +3,10 @@
     <title> React Starter Kit </title>
 
     <link rel="icon" type="text/png" href="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/js-512.png">
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
 
     <script src="vendor.js" defer></script>
     <script src="app.js" defer></script>
@@ -12,6 +16,142 @@
         window._state = <%- state %>;
       <% } %>
     </script>
+
+    <style>
+      body, input, button {
+        font-family: 'Raleway', sans-serif;
+      }
+      body{
+        background-color: rgb(52, 50, 61);
+        min-height: 100%;
+        color: #fff;
+      }
+      .hp-container {
+        padding: 20px;
+      }
+      .header {
+        position: fixed;
+        width: 100%;
+        font-weight: bold;
+        letter-spacing: 10px;
+        font-size: 26px;
+        text-align: center;
+        z-index: 2;
+        top: 0px;
+        padding: 30px 0;
+        background-color: rgb(52, 50, 61);
+      }
+      .login-message {
+        margin-top: 50px;
+      }
+      .username, .password {
+        margin-top: 40px;
+      }
+      input {
+        width: 250px;
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 1px solid #fff;
+        line-height: 26px;
+        font-size: 16px;
+        color: #fff;
+        outline: none;
+      }
+      .login-btn {
+        margin-top: 40px;
+        padding: 5px 20px;
+        color: rgb(29 ,211 ,143);
+        border: 1px solid rgb(29 ,211 ,143);
+        background-color: transparent;
+        line-height: 25px;
+        font-size: 14px;
+        border-radius: 10px;
+      }
+      .tab-container {
+        padding-top: 50px;
+        z-index: 1;
+        background-color: rgb(52, 50, 61);
+        text-align: center;
+        position: fixed;
+        width: 100%;
+      }
+      .tab-item {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 10px;
+        font-size: 16px;
+        line-height: 35px;
+        padding: 0 10px;
+      }
+      .tab-item.active {
+        border-bottom: 2px solid rgb(29, 211, 143);
+      }
+      .tab-content {
+        margin-top: 30px;
+        padding: 10px;
+        padding-top: 120px;
+      }
+      .bid-tab-card-top {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e6e6e6;
+      }
+      .bid-tab-card {
+        position: relative;
+        color: #000;
+        padding: 10px;
+        background-color: #fff;
+        margin-bottom: 20px;
+      }
+      .image-container {
+        width: 70px;
+        height: 70px;
+        background-image: url('https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg');
+        background-size: cover;
+      }
+      .inline {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .main-details-container {
+        margin-left: 15px;
+        width: 170px;
+      }
+      .lead-name {
+        font-weight: bold;
+      }
+      .lead-bhk, .lead-furnish {
+        margin-right: 10px;
+        font-size: 14px;
+        margin-top: 7px;
+      }
+      .lead-locality {
+        margin-top: 7px;
+      }
+      .bid-tab-card-bottom {
+        padding-top: 10px;
+      }
+      .bid-tab-cost {
+        font-size: 20px;
+        padding-right: 12px;
+        line-height: 50px;
+      }
+      .bid-tab-current {
+        padding: 0px 12px;
+        border-left: 1px  solid #e6e6e6;
+        border-right: 1px  solid #e6e6e6;
+      }
+      .bid-tab-bidders {
+        padding-left: 12px;
+      }
+      .bid-timer {
+        position: absolute;
+        bottom: 0px;
+        height: 5px;
+        width: 100%;
+        background-color: rgb(29, 211, 143);
+        right: 0px;
+      }
+    </style>
 
   </head>
   <body>
